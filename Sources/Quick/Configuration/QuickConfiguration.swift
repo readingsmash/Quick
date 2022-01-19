@@ -34,6 +34,7 @@ extension QuickConfiguration {
 
         var configurationSubclasses: [QuickConfiguration.Type] = []
         for index in 0..<classesCount {
+            print("\(index): \(class_getSuperclass(classes[Int(index)]))")
             guard
                 let subclass = classes[Int(index)],
                 let superclass = class_getSuperclass(subclass),
