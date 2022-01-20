@@ -38,9 +38,9 @@ extension QuickConfiguration {
                 let subclass = classes[Int(index)],
                 let superclass = class_getSuperclass(subclass)
                 else { continue }
-            print(superclass)
+            print("🔴🔴🔴🔴 \(superclass) 🔴🔴🔴🔴")
 
-            guard superclass is QuickConfiguration.Type else { return }
+            guard superclass is QuickConfiguration.Type else { continue }
             
             // swiftlint:disable:next force_cast
             configurationSubclasses.append(subclass as! QuickConfiguration.Type)
